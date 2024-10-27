@@ -9,7 +9,7 @@ check_disk_space() {
 check_memory_usage() {
   echo "Memory Usage:"
   free -h
-  mem_free=$(free -m | awk '/^Mem:/ {print int($7/$2 * 100.0)}') # $7 is available memory, and 2 total memory
+  mem_free=$(free -m | awk '/^Mem:/ {print int($7/$2 * 100.0)}') 
     echo "Free memory is $mem_free% of total."
     if [[ $mem_free -lt 20 ]]; then
         echo "Recommendation: Free memory is low at $mem_free%. Consider adding more memory or closing some applications."
