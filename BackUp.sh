@@ -18,16 +18,13 @@ compress_format() {
     done
 }
 
-# Check for the correct number of command line arguments
 if [ $# -lt 2 ]; then
     echo "Please provide at least one <source_directory1> and <destination_directory>"
     exit 1
 fi
 
-# the destination directory 
 backup_dir="${!#}"
 
-# source directories
 source_dirs=("${@:1:$(($#-1))}")
 
 if [ ! -d "$backup_dir" ]; then
